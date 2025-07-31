@@ -276,7 +276,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     <div class="w3-col l8 m6">
       <h1 class="w3-jumbo"><b>Welcome!</b></h1>
       <h1 class="w3-xxxlarge w3-text-green"><b>This is Ryan's portfolio</b></h1>
-      <p><span class="w3-xlarge">Thanks for stopping by.</span> I'm Ryan Rader. I have a broad range of skills in the Technical Writing discipline, and this is my portfolio of documentation and other samples. To see my history and CV on LinkedIn, use the button below.</p>
+      <p><span class="w3-xlarge">Thanks for stopping by.</span> I'm Ryan Rader. I have a broad range of skills in Technical Writing, and this is my portfolio of documentation and other samples. To see my history and CV on LinkedIn, use the button below.</p>
         
       <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small" >
         <a href="https://www.linkedin.com/in/ryan-rader-43042910/" target="_blank" style="color: black"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false" >
@@ -315,45 +315,45 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
   <div class="w3-row" style="margin-top:64px">
     <div class="w3-col s3">
-      <a href="/AboutMe/" style="color: white"><i class="fa fa-bolt w3-text-orange w3-jumbo"></i>
+      <a href="AboutMe/" style="color: white"><i class="fa fa-bolt w3-text-orange w3-jumbo"></i>
       <p>About me</p></a>
     </div>
     <div class="w3-col s3">
-      <a href="/01ApiAiTools/" style="color: white"><i class="fa fa-gear w3-text-red w3-jumbo"></i>
+      <a href="01ApiAiTools/" style="color: white"><i class="fa fa-gear w3-text-red w3-jumbo"></i>
       <p>API, AI, Tools</p></a>
     </div>
     <div class="w3-col s3">
-      <a href="/Software/" style="color: white"><i class="fa fa-code w3-text-yellow w3-jumbo"></i>
+      <a href="Software/" style="color: white"><i class="fa fa-code w3-text-yellow w3-jumbo"></i>
       <p>Software</p></a>
     </div>
     <div class="w3-col s3">
-      <a href="/03Developers/" style="color: white"><i class="fa fa-laptop w3-text-green w3-jumbo"></i>
+      <a href="03Developers/" style="color: white"><i class="fa fa-laptop w3-text-green w3-jumbo"></i>
       <p>Developers</p></a>
     </div>
   </div>
 
   <div class="w3-row" style="margin-top:64px">
     <div class="w3-col s3">
-      <a href="/hardware/" style="color: white"><i class="fa fa-hdd-o w3-text-cyan w3-jumbo"></i>
+      <a href="hardware/" style="color: white"><i class="fa fa-hdd-o w3-text-cyan w3-jumbo"></i>
       <p>Hardware</p></a>
     </div>
     <div class="w3-col s3">
-      <a href="/PrintTemplates/" style="color: white"><i class="fa fa-file w3-text-blue w3-jumbo"></i>
+      <a href="PrintTemplates/" style="color: white"><i class="fa fa-file w3-text-blue w3-jumbo"></i>
       <p>Print Templates</p></a>
     </div>
     <div class="w3-col s3">
-      <a href="/Videos/" style="color: white"><i class="fa fa-camera w3-text-yellow w3-jumbo"></i>
+      <a href="Videos/" style="color: white"><i class="fa fa-camera w3-text-yellow w3-jumbo"></i>
       <p>Videos</p></a>
     </div>
     <div class="w3-col s3">
-      <a href="/BookPub/" style="color: white"><i class="fa fa-book w3-text-cyan w3-jumbo"></i>
+      <a href="BookPub/" style="color: white"><i class="fa fa-book w3-text-cyan w3-jumbo"></i>
       <p>Book Publishing</p></a>
     </div>
   </div>
   
   <div class="w3-row" style="margin-top:64px">
     <div class="w3-col s3">
-      <a href="/design/" style="color: white"><i class="fa fa-image w3-text-pink w3-jumbo"></i>
+      <a href="design/" style="color: white"><i class="fa fa-image w3-text-pink w3-jumbo"></i>
       <p>CSS and Design</p></a>
     </div>
     <div class="w3-col s3">
