@@ -1,0 +1,117 @@
+site_name: Portfolio
+site_url: https://sitename.example
+
+nav:
+  - Home: index.md
+  - API, AI, Tools:
+      - 01ApiAiTools/index.md
+      - Geolocations API: 01ApiAiTools/ApiGeolocations.md
+      - Sensors API: 01ApiAiTools/sensors-api.md
+      - Artificial Intelligence: 01ApiAiTools/ai.md
+      - Tools and processes: 01ApiAiTools/tools-and-processes.md
+  - Software:
+      - Software/index.md
+      - COVID-19 Paycheck Protection Program Guide: Software/01CovidPppUG.md
+      - People Insights Guide: Software/02PeopleInsightsUG.md
+      - Improving productivity: Software/ImprovingProductivity.md
+      - Collaborate with anyone: Software/CollaborateWithAnyone.md
+      - Unifying Applications: Software/UnifyApplications.md
+      - Getting Prysm: Software/GettingPFD.md
+  - Developers:
+      - 03Developers/index.md
+      - SMS integration with Twilio: 03Developers/010SMSIntegrationTwilioUG.md
+      - SSO with SAML and OAuth: 03Developers/020SSOSamlAndOAuth.md
+      - Error logging: 03Developers/LogsInPFD.md
+  - Hardware:
+      - hardware/index.md
+  - Print templates:
+      - PrintTemplates/index.md
+  - Videos:
+      - Videos/index.md
+  - Book publishing:
+      - BookPub/index.md
+  - CSS and design:
+      - design/index.md
+  - Home page test:
+      - HomePgTest/index.md
+
+  - Product Catalog:
+      - ProductCatalog/index.md
+      - Hotel Availability: ProductCatalog/HotelAvail.md
+      - Pet Store Stoplight: ProductCatalog/PetStoreStoplight.md
+      - Pet Store Swagger UI Tag: ProductCatalog/PetStoreSwgUiTag.md
+      - Hotel Content: ProductCatalog/HotelContent.md
+      - Manage Rate Plan: ProductCatalog/ManageRatePlan.md
+
+theme:
+  name: material
+  font:
+    text: Quicksand
+    code: Red Hat Mono
+  logo: assets/RyanLogo.png
+  favicon: assets/favicon.ico
+  features:
+    - navigation.footer
+    - navigation.path
+    - navigation.indexes
+    - navigation.instant
+    - navigation.top
+    # Turn on the following two lines only if you want tabs in the top nav
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - toc.follow
+
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: deep purple
+      accent: light blue
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: purple
+      accent: indigo
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - tables
+  - toc:
+      permalink: true
+      title: On this page
+      toc_depth: 2
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+  - assets/javascripts/home.js
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - glightbox
+  - search
+  - swagger-ui-tag

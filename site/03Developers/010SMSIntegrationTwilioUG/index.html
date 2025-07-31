@@ -1,0 +1,2185 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sitename.example/03Developers/010SMSIntegrationTwilioUG/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../020SSOSamlAndOAuth/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>SMS integration with Twilio - Portfolio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Quicksand";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sms-integration-with-twilio-marketplace" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Portfolio" class="md-header__button md-logo" aria-label="Portfolio" data-md-component="logo">
+      
+  <img src="../../assets/RyanLogo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Portfolio
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SMS integration with Twilio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="light-blue"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Portfolio" class="md-nav__button md-logo" aria-label="Portfolio" data-md-component="logo">
+      
+  <img src="../../assets/RyanLogo.png" alt="logo">
+
+    </a>
+    Portfolio
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01ApiAiTools/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    API, AI, Tools
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            API, AI, Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01ApiAiTools/ApiGeolocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Geolocations API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01ApiAiTools/sensors-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensors API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01ApiAiTools/ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01ApiAiTools/tools-and-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tools and processes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Software/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/01CovidPppUG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    COVID-19 Paycheck Protection Program Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/02PeopleInsightsUG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    People Insights Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/ImprovingProductivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Improving productivity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/CollaborateWithAnyone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collaborate with anyone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/UnifyApplications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unifying Applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/GettingPFD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Prysm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Developers
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    SMS integration with Twilio
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    SMS integration with Twilio
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-and-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements and Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-communications-with-sms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Communications with SMS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broadcast Messaging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-messaging-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broadcast Messaging Templates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-information-on-sms-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      More Information on SMS Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-responses-from-sms-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscribe Responses From SMS Text
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../020SSOSamlAndOAuth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSO with SAML and OAuth
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LogsInPFD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Error logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../hardware/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../PrintTemplates/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Print templates
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Print templates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Videos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Videos
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Videos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../BookPub/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Book publishing
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Book publishing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../design/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    CSS and design
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            CSS and design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../HomePgTest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Home page test
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Home page test
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ProductCatalog/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Product Catalog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Product Catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProductCatalog/HotelAvail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hotel Availability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProductCatalog/PetStoreStoplight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pet Store Stoplight
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProductCatalog/PetStoreSwgUiTag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pet Store Swagger UI Tag
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProductCatalog/HotelContent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hotel Content
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProductCatalog/ManageRatePlan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Rate Plan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-and-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements and Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-communications-with-sms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Communications with SMS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broadcast Messaging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-messaging-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Broadcast Messaging Templates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-information-on-sms-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      More Information on SMS Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-responses-from-sms-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscribe Responses From SMS Text
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sms-integration-with-twilio-marketplace">SMS Integration with Twilio Marketplace<a class="headerlink" href="#sms-integration-with-twilio-marketplace" title="Permanent link">&para;</a></h1>
+<p>The SMS Integration with Twilio provides the ability to configure Short
+Messaging Service (SMS) notifications within the UKG Ready application.
+When this integration is added and set up, SMS message configuration
+will be available in the following areas:</p>
+<ul>
+<li>
+<p>Global Notifications</p>
+</li>
+<li>
+<p>Workflow Notifications</p>
+</li>
+<li>
+<p>Communication Templates (HR only)</p>
+</li>
+</ul>
+<p>Twilio offers a global platform that makes sending SMS notifications
+easy.</p>
+<ul>
+<li>
+<p>Send SMS messages with local and toll-free numbers, short codes,
+  custom alphanumeric sender IDs, or by using your own existing phone
+  numbers.</p>
+</li>
+<li>
+<p>Send Multimedia Messaging Service (MMS) messages. Outside the U.S. and
+  Canada, attachments are sent as links.</p>
+</li>
+<li>
+<p>Send text messages over the carrier network to any phone, anywhere in
+  the world.</p>
+</li>
+<li>
+<p>Automatic route monitoring ensures that long-code phone numbers are
+  used to send messages when a carrier is unable to receive messages
+  from short codes, and that global messages always take the best path.</p>
+</li>
+<li>
+<p>Send long messages and Twilio will automatically segment and
+  reassemble them.</p>
+</li>
+<li>
+<p>Messages sent to the same person automatically uses a previously
+  recognizable phone number to create a consistent experience and
+  maintain conversation history.</p>
+</li>
+</ul>
+<p>You must set up an account with Twilio prior to using this functionality
+with Workforce Ready. We have provided links under the <strong>Pricing</strong> tab
+of the Marketplace product to help you contact them, view Twilio pricing
+structures, and other Twilio support information.</p>
+<p><a href="https://lookatthem-tech.github.io/portfolio001/Content/Topics/Developers/SMSIntegrationTwilioUG/SMSIntegrationTwilioUG.pdf" target="_blank">Download
+this User Guide as PDF</a></p>
+<h2 id="requirements-and-prerequisites">Requirements and Prerequisites<a class="headerlink" href="#requirements-and-prerequisites" title="Permanent link">&para;</a></h2>
+<p>To take advantage of SMS functionality, you must complete a few steps
+prior to using it. First, you must add the <strong>SMS Integration with
+Twilio</strong> marketplace product. Once added, there are a few housekeeping
+steps to complete in your company. Once that is done you will then be
+able to select SMS options within company notifications.</p>
+<h3 id="download-the-marketplace-product">Download the Marketplace Product<a class="headerlink" href="#download-the-marketplace-product" title="Permanent link">&para;</a></h3>
+<p>To add the marketplace product, navigate to <strong>Marketplace &gt; Marketplace
+Setup</strong> and add the <strong>SMS Integration with Twilio</strong> marketplace product
+to the company.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The marketplace product contains links and information to Twilio. You must create a Twilio account and gather information from them before you can complete the final installation of the product.</p>
+</div>
+<ul>
+<li>
+<p>From the <strong>Home</strong> or <strong>Search/Browse</strong> tab, locate and click the <strong>SMS
+  Integration with Twilio</strong> product hyperlink.</p>
+</li>
+<li>
+<p>Click <strong>Add To Company</strong>. You will be prompted to sign the <strong>Terms And
+  Conditions</strong> page.</p>
+</li>
+<li>
+<p>After signing the <strong>Terms And Conditions</strong>, select a security profile
+  for the users who will manage this product. This is typically the
+  Company Administrator.</p>
+</li>
+<li>
+<p>After clicking <strong>OK</strong>, the system will process for a bit and when
+  finished, a <strong>Success</strong> message will display.</p>
+</li>
+<li>
+<p>You can verify the installation on the <strong>Installed</strong> tab.</p>
+</li>
+</ul>
+<p>After you've created your Twilio account, the next step is to edit the
+marketplace product settings and add your Twilio information.</p>
+<ul>
+<li>
+<p>Under the <strong>Installed</strong> tab, click the edit icon for the product.</p>
+</li>
+<li>
+<p>Input the Twilio <strong>Account SID</strong>, <strong>Authentication Token</strong>, and
+  <strong>Messaging Service SID</strong> into the appropriate fields.</p>
+</li>
+</ul>
+<h4 id="global-setup">Global Setup<a class="headerlink" href="#global-setup" title="Permanent link">&para;</a></h4>
+<p>Once your marketplace product is installed and completed, you will then
+need to edit a few settings in your company.</p>
+<p>Enable SMS notifications globally. Multiple options are available. After
+selecting an option here, SMS fields will then become available in the
+application. Skipping this step will result in no SMS settings being
+available. Optionally, you can configure a custom SMS Header that will
+be appended to the front of each SMS notification.</p>
+<p>Navigate to the <strong>Company Configuration</strong> widget under the <strong>Company
+Info</strong> tab, located under <strong>Company Settings &gt; Global Setup &gt; Company
+Setup</strong>, and select an SMS option in the <strong>Notifications Through</strong>
+field.</p>
+<p><a href="../SMSIntegrationTwilio.png"><img alt="" src="../SMSIntegrationTwilio.png" /></a></p>
+<p><strong>SMS</strong>: Will use only SMS messaging.</p>
+<p><strong>SMS &amp; Email</strong>: Will use SMS messaging and allow the email option as
+well.</p>
+<p><strong>SMS &amp; Mailbox</strong>: Will use SMS messaging and allow the user's mailbox
+to receive messages.</p>
+<p><strong>Email &amp; Mailbox &amp; SMS</strong>: Will use SMS messaging, user mailboxes, and
+email.</p>
+<p><strong>SMS Header:</strong> In this field, you can optionally type a customized
+header that will be appended to the front of each SMS message sent from
+the system. For example, you may want to alert recipients who the alert
+is coming from by entering your company name in this field, i.e.,
+OURCOMPANY: rest of header.</p>
+<p>Employees can enable/disable SMS in notification preferences. End users
+will be able to toggle their own SMS notification preferences under <strong>My
+Info</strong> &gt; <strong>My Information &gt; Notification Preferences</strong>.</p>
+<p><a href="../SMSIntegrationTwilio_1.png"><img alt="" src="../SMSIntegrationTwilio_1.png" /></a></p>
+<p>Broadcast Messaging can be turned off by unchecking the related boxes
+for Broadcast Email, Broadcast Mailbox, and Broadcast Message SMS.
+Unchecking these has no effect on the options under them for Primary
+Email, Mailbox, and SMS. If Primary Email, Mailbox or SMS are disabled,
+the corresponding Broadcast Messaging option is disabled as well.</p>
+<p><a href="../SMSIntegrationTwilio_2.png"><img alt="" src="../SMSIntegrationTwilio_2.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To comply with Twilio and industry standards, end users will be able to reply with STOP, CANCEL, etc. to any SMS notification. If they do, notification preferences will be updated in the application to disable SMS. Notification preference changes can be audited in the Account Audit Trail report as well.</p>
+</div>
+<p><a href="../SMSIntegrationTwilio_3.png"><img alt="" src="../SMSIntegrationTwilio_3.png" /></a></p>
+<h2 id="configuring-communications-with-sms">Configuring Communications with SMS<a class="headerlink" href="#configuring-communications-with-sms" title="Permanent link">&para;</a></h2>
+<p>You can configure the system to use SMS in notifications, workflows, and
+recruitment.</p>
+<h3 id="sms-in-notifications">SMS in Notifications<a class="headerlink" href="#sms-in-notifications" title="Permanent link">&para;</a></h3>
+<p>Once your company has been edited to enable SMS messaging fields, you
+can then begin using SMS messages in notifications. Notifications are
+configured under <strong>Company Settings &gt; Global Setup &gt; Notifications</strong>.</p>
+<p>Depending what was selected in <strong>Company Setup</strong> will determine the
+fields available in notifications. The <strong>SMS Message</strong> will be disabled
+by default. Check the <strong>Enabled</strong> checkbox to activate the message
+options. Once enabled, you can then type a customized message and use
+the system tags to create a message. The messages have a 1400-character
+limit.</p>
+<p><a href="../SMSIntegrationTwilio_4.png"><img alt="" src="../SMSIntegrationTwilio_4.png" /></a></p>
+<p><a href="../SMSIntegrationTwilio_5.png"><img alt="" src="../SMSIntegrationTwilio_5.png" /></a></p>
+<h3 id="sms-in-workflows">SMS in Workflows<a class="headerlink" href="#sms-in-workflows" title="Permanent link">&para;</a></h3>
+<p>SMS notifications can also be added to the <strong>Generate Notification</strong>
+step in workflows. This will generate a SMS message to the designated
+recipient when the workflow proceeds to the <strong>Generate Notification</strong>
+step. Workflows are located under <strong>Company Settings &gt; Global Setup &gt;
+Workflows</strong>. The <strong>SMS Enabled</strong> checkbox will be unchecked by default.
+Check to activate the SMS messaging options.</p>
+<p><a href="../SMSIntegrationTwilio_6.png"><img alt="" src="../SMSIntegrationTwilio_6.png" /></a></p>
+<h3 id="two-way-sms-in-workflows">Two-Way SMS in Workflows<a class="headerlink" href="#two-way-sms-in-workflows" title="Permanent link">&para;</a></h3>
+<p>When using workflows, users can leverage Two-Way SMS functionality when
+it comes to approvals or rejections of actions within the particular
+workflow. This is configured in the same place as mentioned above (in
+the Generate Notifications step). You will want to apply this to the
+notifications step that comes before the Approval/Reject Manager step.</p>
+<p><a href="../SMSIntegrationTwilio_7.png"><img alt="Diagram Description automatically
+generated" src="../SMSIntegrationTwilio_7.png" /></a></p>
+<p>As you click the SMS Enabled checkbox, you will see another option for
+Two Way SMS Enabled that will need to be checked.</p>
+<p><a href="../SMSIntegrationTwilio_8.png"><img alt="A picture containing graphical user interface Description
+automatically
+generated" src="../SMSIntegrationTwilio_8.png" /></a></p>
+<p>As the SMS Message text space appears, configure your message using free
+text and tags as normal.</p>
+<p><a href="../SMSIntegrationTwilio_9.png"><img alt="Graphical user interface, text, application Description automatically
+generated" src="../SMSIntegrationTwilio_9.png" /></a></p>
+<p>When the workflow is triggered and the notification is sent, the manager
+will see the message as formatted by the user in configuration. This
+will immediately be followed by a canned set of instructions to explain
+how to advance the workflow: Please reply Y/N followed by this code
+\&lt;code&gt; to Approve/Reject this request. The code is very important as
+this is a unique value tied to each request. As a manager, you could
+receive multiple requests for one workflow and the system needs to know
+which specific request is being approved or denied.</p>
+<p><a href="../SMSIntegrationTwilio_10.png"><img alt="Graphical user interface, text, application, chat or text message
+Description automatically
+generated" src="../SMSIntegrationTwilio_10.png" /></a></p>
+<p>There is error proofing built into this process as well. If an incorrect
+code is entered, the system will let you know (similarly if you enter
+the same code twice).</p>
+<h4 id="two-way-sms-workflows-required-comment">Two-Way SMS Workflows: Required Comment<a class="headerlink" href="#two-way-sms-workflows-required-comment" title="Permanent link">&para;</a></h4>
+<p>You can configure a Workflow to allow for a SMS response to Approve or
+Reject, plus any required Comment, so that users can Approve/Reject a
+Workflow that includes a Comment and submit it via SMS. When the
+Workflows listed below are sent through SMS Two-Way, the user is
+notified that a Comment is required in addition to their Approve/Reject
+and unique code.</p>
+<ul>
+<li>
+<p>Time Off Request</p>
+</li>
+<li>
+<p>Timesheet</p>
+</li>
+<li>
+<p>Timesheet Change Request</p>
+</li>
+<li>
+<p>Schedule</p>
+</li>
+<li>
+<p>Schedule Open Shift</p>
+</li>
+<li>
+<p>Schedule Request for Coverage</p>
+</li>
+<li>
+<p>Schedule Shift Swap</p>
+</li>
+<li>
+<p>Compensation Proposal Request</p>
+</li>
+</ul>
+<h3 id="sms-in-recruitment">SMS in Recruitment<a class="headerlink" href="#sms-in-recruitment" title="Permanent link">&para;</a></h3>
+<p>If you are using the Recruitment marketplace product, SMS communication
+can be configured in communication templates. This will allow managers,
+hiring managers, and HR professionals to communicate with applicants via
+SMS messaging.</p>
+<h4 id="communication-templates">Communication Templates<a class="headerlink" href="#communication-templates" title="Permanent link">&para;</a></h4>
+<p>Communication Templates can be selected by the manager or HR
+professional when communicating with an applicant. The communication
+templates are located at <strong>Company Settings &gt; HR Setup &gt; Applicant
+Tracking/Recruitment &gt; Templates Library &gt; Communication Templates</strong>.
+The <strong>SMS Enabled</strong> checkbox will be unchecked by default. Check to
+activate the SMS messaging options.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Make sure to check the Active checkbox in the notification to make it available.</p>
+</div>
+<p><a href="../SMSIntegrationTwilio_11.png"><img alt="" src="../SMSIntegrationTwilio_11.png" /></a></p>
+<h4 id="communications-with-applicants">Communications with Applicants<a class="headerlink" href="#communications-with-applicants" title="Permanent link">&para;</a></h4>
+<p>When managers or HR professionals choose to communicate with an
+applicant, they can choose one of the preconfigured communication
+templates or create a customized message. Managers can communicate with
+applicants in the following areas:</p>
+<ul>
+<li>
+<p><strong>Team &gt;</strong> <strong>Recruitment &gt; Candidates &gt; Applicants</strong></p>
+</li>
+<li>
+<p><strong>Team &gt;</strong> <strong>Recruitment &gt; Candidates &gt; Job Applications</strong></p>
+</li>
+</ul>
+<p>In both areas, users will select one or more applicants or job
+applications and select the <strong>Communicate To Selected</strong> button. In the
+pop-up, you can select a communication template from the <strong>Template To
+Use</strong> icon. When selecting a template, it will populate the Email area
+(if enabled at the company level), and the SMS area with content from
+the template. Users can edit as needed.</p>
+<p>If not using a template, users can create their own customized messages
+and use system tags to complete the message.</p>
+<h5 id="applicants-and-job-applications">Applicants and Job Applications<a class="headerlink" href="#applicants-and-job-applications" title="Permanent link">&para;</a></h5>
+<p>After selecting one or more entries and clicking the <strong>Communicate To
+Selected</strong> button, the pop-ups will allow you select a template, create
+customized messages, or turn off/on certain communication methods.</p>
+<p><a href="../SMSIntegrationTwilio_12.png"><img alt="" src="../SMSIntegrationTwilio_12.png" /></a></p>
+<p><a href="../SMSIntegrationTwilio_13.png"><img alt="" src="../SMSIntegrationTwilio_13.png" /></a></p>
+<h5 id="job-requisitions-and-applicant-information">Job Requisitions and Applicant Information<a class="headerlink" href="#job-requisitions-and-applicant-information" title="Permanent link">&para;</a></h5>
+<p>When opening a Job Requisition for viewing or editing, an option is
+available to <strong>Notify Applicant</strong> which is a manual method of
+encouraging an applicant to apply for the job. After selecting the
+option and adding an applicant, a communication pop-up will display
+where you can craft a communication to the applicant. You can select a
+communication template or create a customized message. The options
+available here will depend on what was selected on the <strong>Company Setup</strong>
+page (Email, SMS, etc.).</p>
+<p>Job Requisitions are located under <strong>Team &gt;</strong> <strong>Recruitment &gt; Job
+Requisitions</strong>.</p>
+<p><a href="../SMSIntegrationTwilio_14.png"><img alt="" src="../SMSIntegrationTwilio_14.png" /></a></p>
+<p>When viewing or editing an applicant, the <strong>Applicant Information</strong> page
+will open and contains multiple tabs and <strong>Jump To</strong> links. On the
+<strong>Communications</strong> tab, you can select various communication options. In
+the <strong>Interviews</strong> widget, in the Actions ellipses, you can add an
+interview (if none are listed). Once added, the Actions ellipses in the
+entry will have the <strong>Communicate</strong> option. When selected, a pop-up will
+display. This pop-up contains the SMS option, as well as the iCalendar
+Attachment option. The options available here will depend on what was
+selected on the <strong>Company Setup</strong> page (Email, SMS, etc.)</p>
+<p>If there are multiple options in the lists, and you want to send the
+same communication to all selected, you can select the entries and then
+click the <strong>Communicate</strong> button on the page.</p>
+<p>Applicant Information is located under <strong>Team &gt;</strong> <strong>Recruitment &gt;
+Candidates &gt; Applicants</strong>. Then open/view an applicant from the list.</p>
+<p><a href="../SMSIntegrationTwilio_15.png"><img alt="" src="../SMSIntegrationTwilio_15.png" /></a></p>
+<p><a href="../SMSIntegrationTwilio_16.png"><img alt="" src="../SMSIntegrationTwilio_16.png" /></a></p>
+<p>In the pop-ups, you will have the option to turn off or on each area of
+communication via the slider bubble.</p>
+<p><strong>On</strong></p>
+<p><a href="../SMSIntegrationTwilio_17.png"><img alt="" src="../SMSIntegrationTwilio_17.png" /></a></p>
+<p><strong>Off:</strong> The content will remain, but will be grayed out.</p>
+<p><a href="../SMSIntegrationTwilio_18.png"><img alt="" src="../SMSIntegrationTwilio_18.png" /></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If iCalendar Attachment is enabled within any of these areas, an iCalendar attachment will be delivered with the notification in the form of an MMS message.</p>
+</div>
+<h2 id="broadcast-messaging">Broadcast Messaging<a class="headerlink" href="#broadcast-messaging" title="Permanent link">&para;</a></h2>
+<p>Broadcast messaging is a form of communication that allows
+administrators and managers to send messages to employees en masse.
+While this form of communication is intended for multiple recipients, it
+can also be used to send messages to single recipients. Templates can be
+defined and applied to make creating and managing communications easier.</p>
+<p>If you have enabled and are using Broadcast Messaging, there are options
+to send these communications via SMS.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Broadcast Messaging is enabled within the <strong>Mail Settings</strong> widget on the <strong>Company Info</strong> tab under <strong>Company Settings &gt; Global Setup &gt; Company Setup</strong>.</p>
+</div>
+<h2 id="broadcast-messaging-templates">Broadcast Messaging Templates<a class="headerlink" href="#broadcast-messaging-templates" title="Permanent link">&para;</a></h2>
+<p>Within the templates, messages can be defined in the SMS Message text
+box. SMS messages are limited to 1400 characters and if copying messages
+from the Email/Mailbox area, the formatting will not be retained in the
+SMS Message area.</p>
+<p>An iCalendar attachment and appointment can be defined and is supported
+for SMS messages.</p>
+<p><a class="glightbox" href="../SMSIntegrationTwilio_19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../SMSIntegrationTwilio_19.png" /></a></p>
+<h3 id="broadcast-messaging-security-permissions">Broadcast Messaging: Security Permissions<a class="headerlink" href="#broadcast-messaging-security-permissions" title="Permanent link">&para;</a></h3>
+<p>You can restrict certain users or security profiles from being able to
+create or send Broadcast Messages. A security item titled <strong>Send
+Broadcast Communication</strong> is located on the HR Tab, in the Employee
+Related Functions widget of the security profiles.</p>
+<p>If this security item is enabled, the user has the <strong>Communicate</strong>
+button displayed as an option on the Employee Information screen and any
+other applicable screens. If this item is disabled, the user does not
+have the <strong>Communicate</strong> button as an option.</p>
+<h3 id="company-setup-sms-opt-in-procedure">Company Setup SMS Opt In Procedure<a class="headerlink" href="#company-setup-sms-opt-in-procedure" title="Permanent link">&para;</a></h3>
+<p>Companies with SMS Integration with Twilio already enabled must have
+record of employees opting in to receive notifications via SMS to be
+compliant with the Telephone Consumer Protection Act (TCPA) opt-in
+regulations. An option in the <strong>Mail Settings</strong> section allows existing
+companies with Twilio Integration enabled to become compliant.</p>
+<p><a class="glightbox" href="../SMSIntegrationTwilio_25.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../SMSIntegrationTwilio_25.png" /></a></p>
+<p>The checkbox, <strong>TCPA Opt-In Compliance Notification</strong>, can be enabled
+under <strong>Global Setup &gt; Company Setup &gt; Company Info</strong> tab, in the
+<strong>Mail Settings</strong> section. For companies that already have the Twilio
+Marketplace Product added, the checkbox is unchecked. When checked, a
+pop-up notification provides the following text:</p>
+<blockquote>
+<p>Are you sure you want enable this feature? Upon enablement of this
+feature, all employees and applicants will be opted-out of their current
+SMS delivery method preferences, giving users the opportunity to
+complete proper opt-in procedures.</p>
+</blockquote>
+<p>When the feature is enabled, the company does not have an option to
+disable it. After the feature is enabled, all users are opted out. An
+<strong>Announcement: Opt-In to SMS Notifications</strong> pop-up is shown upon the
+next login for each employee, including new accounts. The pop-up
+explains:</p>
+<blockquote>
+<p>You are currently opted-out of SMS notifications. Please navigate to
+your [notification preferences] screen to opt-in.</p>
+</blockquote>
+<h3 id="sms-opt-in-procedure-for-new-companies">SMS Opt In Procedure for New Companies<a class="headerlink" href="#sms-opt-in-procedure-for-new-companies" title="Permanent link">&para;</a></h3>
+<p>Companies using SMS to communicate to their employees need to gather
+consent from each employee to send them text messages. When SMS is
+enabled on a Company Account via Twilio integration, all employee
+accounts including applicants and future hires default to SMS disabled
+until the employees OPT IN to receive text messages in their
+Notification Preferences.</p>
+<h3 id="notification-burst-when-tcpa-is-enabled">Notification Burst When TCPA is Enabled<a class="headerlink" href="#notification-burst-when-tcpa-is-enabled" title="Permanent link">&para;</a></h3>
+<p>When the <strong>TCPA Opt-In Compliance Notification</strong> checkbox is enabled in
+the Company Setup, all existing applicants are opted out of the SMS
+notification preference. To ensure applicants are aware that they are
+opted out and to provide them with steps to opt-in, a notification is
+sent automatically when the TCPA option is enabled. Applicants receive a
+notification via email when:</p>
+<ul>
+<li>
+<p>The company has enabled the TCPA checkbox in the Company Setup.</p>
+</li>
+<li>
+<p>The applicant had SMS checked in his/her/their notification preference
+  and is now opted-out.</p>
+</li>
+</ul>
+<p>The automatic notification that is triggered when the <strong>TCPA Opt-In
+Compliance Notification</strong> option is selected, <strong>Applicant SMS Opt-out</strong>,
+is enabled by default (<strong>Company Settings &gt; Global &gt; Notifications</strong>),
+and can be cloned or deleted.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TCPA Opt-In Compliance is not supported for demo company snapshots. If a snapshot of a demo company is created before the Opt In procedure is in  place, and the company decides to reload the snapshot after the procedure is set up, the <strong>TCPA Opt-In Compliance</strong> checkbox and user SMS preferences remain unchanged.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Important</p>
+<p>When Administrators create a new company using Company Copy or Remote Company Copy, the users' SMS notification preferences are not copied to the  new company. This prevents a scenario where a user is Opted In by default when a new company is created using a Company Copy.</p>
+</div>
+<h3 id="individual-user-opt-in-for-sms-delivery-method">Individual User Opt-In for SMS Delivery Method<a class="headerlink" href="#individual-user-opt-in-for-sms-delivery-method" title="Permanent link">&para;</a></h3>
+<p>Companies using SMS to communicate with their employees need employees
+to consent to receiving SMS to be compliant with TCPA regulations. Each
+employee can OPT IN to receive notifications through the SMS delivery
+method. If a user wishes to receive notifications via the SMS delivery
+method, the user can navigate to the <strong>Notification Preferences</strong> screen
+and opt-in by enabling the <strong>SMS</strong> Delivery Method checkbox (<strong>My Info
+&gt; My Information &gt; Notification Preferences</strong>).</p>
+<p>If a user has not already opted-in and the user does not have a cell
+phone or country code added to their profile, the <strong>SMS</strong> checkbox
+appears unchecked. The user has the option to add their cell phone, and
+a message displays stating <strong>To make SMS available, edit your personal
+information to add your cell phone and country code</strong>. The message
+includes a link to the employee's personal information.</p>
+<p>If the employee has Edit permissions for the <strong>ESS Cell Phone</strong> security
+item in their assigned security profile, they can opt in by enabling the
+<strong>SMS</strong> Delivery Method checkbox. If the employee does not have Edit
+permissions, the system checks if the company has at least one HR Action
+configured that includes a <strong>Cell Phone</strong> action item. If the company
+does, the system confirms that the employee has initiate permissions for
+at least one HR Action with the <strong>Cell Phone</strong> action item. If so, the
+employee is directed to <strong>My HR &gt; HR Actions</strong> to submit a request to
+add the cell phone.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Phone numbers must be entered as the full numeric phone number without any special characters (no dashes or parentheses) or spaces. For example, 1 5552345678.</p>
+</div>
+<p>When the user has a cell phone added to their profile, the <strong>SMS</strong>
+checkbox becomes editable.</p>
+<p><strong>Reminder</strong>: When a company enables SMS, all employees within the
+company default to SMS disabled. Users must navigate to their
+<strong>Notification Preferences</strong> page to OPT IN to receiving notifications
+via the SMS delivery method.</p>
+<p>As part of the Opt In procedure, each user is sent a six digit
+confirmation code that must be entered back into the application. Users
+can then enter the code into the input boxes in the <strong>Verify Your Phone
+Number</strong> dialog box.</p>
+<h3 id="sms-opt-in-for-applicants">SMS Opt In for Applicants<a class="headerlink" href="#sms-opt-in-for-applicants" title="Permanent link">&para;</a></h3>
+<p>Applicants can consent to receiving SMS notifications to ensure
+compliance with TCPA regulations. Each applicant can Opt In to receive
+notifications via the SMS Delivery Method. When the <strong>TCPA Opt-In
+Compliance Notification</strong> option is enabled, users see an enabled
+<strong>SMS</strong> checkbox when the proper permissions are configured for the
+applicant and the cell phone/country code are available.</p>
+<p>The message under the SMS checkbox in Notification Preferences reads:
+<strong>To make SMS available, edit your applicant profile to add your cell
+phone and country code</strong>. The words "applicant profile" in the message
+are a link, and clicking on it takes the applicant to the My Applicant
+Profile page where, if necessary, they can edit the profile to add the
+cell phone details.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Phone numbers must be entered as the full numeric phone number without any special characters (no dashes or parentheses) or spaces. For example, +1 5552345678.</p>
+</div>
+<p>Users can select the <strong>SMS</strong> checkbox if needed. When they do, a pop-up
+for <strong>Verify Your Phone Number</strong> opens. Choosing <strong>Send Code</strong> generates
+a message that says <strong>Sending Code</strong>. If the user closes the pop-up
+before the code is successfully verified, then the <strong>SMS</strong> checkbox
+remains unchecked. If the phone is successfully verified, the <strong>SMS</strong>
+checkbox is enabled.</p>
+<h4 id="sms-opt-in-via-quick-apply-or-apply-with-seek">SMS Opt-In Via Quick Apply or Apply with Seek<a class="headerlink" href="#sms-opt-in-via-quick-apply-or-apply-with-seek" title="Permanent link">&para;</a></h4>
+<p>Where the <strong>TCPA Opt-In Compliance Notification</strong> is enabled, applicants
+can Opt In to SMS notifications when using the Quick Apply or Apply with
+Seek features. Applicants applying for a job using Quick Apply or Apply
+with Seek can click on <strong>Apply</strong> after entering all valid details and
+questionnaires (no errors exist). When the job application is submitted
+successfully, the Completed message displays. When the applicant clicks
+<strong>OK</strong> on the Completed message, a pop-up displays and asks:</p>
+<blockquote>
+<p>Notify you of update via text messages (SMS)?</p>
+</blockquote>
+<p>Another pop-up then allows the applicant to verify their phone number.
+Once the number is verified, the applicant can choose the <strong>Send Code</strong>
+option. An error message displays if the code was not sent, and a
+success message displays when the code is sent successfully. Once it is
+received, the applicant can enter the code and click the <strong>Verify</strong>
+option to complete the Opt In process.</p>
+<h3 id="sms-delivery-preferences-report">SMS Delivery Preferences Report<a class="headerlink" href="#sms-delivery-preferences-report" title="Permanent link">&para;</a></h3>
+<p>A <strong>SMS Delivery Preferences</strong> report captures Opt-In/Opt-Out activity
+for all account types and is available in both Admin companies and
+Client companies. This allows companies to see the status of SMS opt-ins
+and opt-outs, perhaps for the purpose of tracking that SMS messages were
+sent during opt-in periods.</p>
+<p>This report allows companies to verify that they gathered the proper
+consent to send out SMS notifications to their applicants and employees.
+This report was previously available for Partner Resellers and is
+available for customers via the paths below.</p>
+<ul>
+<li>
+<p>Partner Resellers: <strong>Reports &gt; Marketplace Reports &gt; Twilio &gt; SMS
+  Delivery Preferences</strong></p>
+</li>
+<li>
+<p>Customers: <strong>My Reports &gt; Marketplace Reports &gt; Twilio &gt; SMS
+  Delivery Preferences</strong></p>
+</li>
+</ul>
+<p><strong>Security</strong>: A <strong>SMS Delivery Preferences</strong> security item, located in
+the security profiles under <strong>Reports &gt; Marketplace Reports</strong>, is
+available to enable for the appropriate users. When this item is enabled
+for the security profile assigned to a user, the report becomes
+available in the menus.</p>
+<div class="admonition note">
+<p class="admonition-title">Important</p>
+<p>This report only captures Opt In/Opt Out behavior moving forward from when the report is made available. Past Opt In/Opt Out data is not captured  in the report.</p>
+</div>
+<h3 id="assigning-broadcast-messages-to-employees">Assigning Broadcast Messages to Employees<a class="headerlink" href="#assigning-broadcast-messages-to-employees" title="Permanent link">&para;</a></h3>
+<p>Assigning employees to a Broadcast Message is done from the Employee
+Information report page. Select one or multiple employees and then
+select the <strong>Communicate</strong> button.</p>
+<p><a class="glightbox" href="../SMSIntegrationTwilio_20.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../SMSIntegrationTwilio_20.png" /></a></p>
+<p>On the pop-up, you can manually create an SMS message and system tags
+are available. If you have created templates, this is where you apply
+them. Once a template is selected and applied, you will still have the
+option to edit the text or enable/disable communication methods and also
+enable the iCalendar attachment.</p>
+<p>When enabling a calendar appointment, you must set the When/From/To
+parameters for the appointment.</p>
+<p>When sending out a Broadcast Message to employees, the option to specify
+when to send (Date and Time) the message is available in the Schedule
+section.</p>
+<p><a class="glightbox" href="../SMSIntegrationTwilio_21.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../SMSIntegrationTwilio_21.png" /></a></p>
+<p>When ready, select the <strong>Send</strong> button and the SMS message will go out
+to the recipient(s).</p>
+<p><a class="glightbox" href="../SMSIntegrationTwilio_22.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../SMSIntegrationTwilio_22.png" /></a></p>
+<h3 id="system-generated-sms-report">System Generated SMS Report<a class="headerlink" href="#system-generated-sms-report" title="Permanent link">&para;</a></h3>
+<p>Users with the appropriate security settings can view the history of
+outgoing SMS communications within their company to allow for proper
+accounting. The System Generated SMS report is available under <strong>My Info
+&gt; My Reports &gt; Marketplace Reports &gt; Twilio &gt; System Generated
+SMS</strong>.</p>
+<p>This report is only visible if the <strong>SMS Integration with
+Twilio</strong> <strong>Marketplace</strong> app is added to the company. In addition, users
+must have the <strong>System Generated SMS Report</strong> security item enabled in
+the <strong>Marketplace Reports</strong> section on the <strong>Reports</strong> tab in their
+assigned Security Profile.</p>
+<p><a class="glightbox" href="../SMSIntegrationTwilio_23.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../SMSIntegrationTwilio_23.png" /></a></p>
+<h3 id="user-generated-sms-report">User Generated SMS Report<a class="headerlink" href="#user-generated-sms-report" title="Permanent link">&para;</a></h3>
+<p>Users can view the history of responses to SMS Communications within
+their company for proper accounting using the User Generated SMS report
+under <strong>My Info &gt; My Reports &gt; Marketplace Reports &gt; Twilio &gt; User
+Generated SMS Report</strong>.</p>
+<p>This report is only visible if the SMS Integration with
+Twilio Marketplace item is added to the company. In addition, users must
+have the <strong>User Generated SMS Report</strong> security item enabled in the
+<strong>Marketplace Reports</strong> section on the <strong>Reports</strong> tab of their assigned
+Security Profile to access this report.</p>
+<h3 id="partner-resellers-only-system-generated-sms-report">Partner Resellers Only: System Generated SMS Report<a class="headerlink" href="#partner-resellers-only-system-generated-sms-report" title="Permanent link">&para;</a></h3>
+<p>In the System Generated Emails report, a new default column titled
+<strong>Event Type</strong> has been added that will display the specific type of
+method used for the message (for example: Broadcast, HR Action Request,
+etc.).</p>
+<h2 id="more-information-on-sms-integration">More Information on SMS Integration<a class="headerlink" href="#more-information-on-sms-integration" title="Permanent link">&para;</a></h2>
+<p>The following sections cover some extra information for users of SMS
+integration.</p>
+<h3 id="samsung-users">Samsung Users<a class="headerlink" href="#samsung-users" title="Permanent link">&para;</a></h3>
+<p>iCalendar attachments in messages can only be sent by Workforce Ready as
+.ics files, and Twilio only supports the delivery of .ics files. The
+default <strong>Messages</strong> app on Samsung devices only supports .vcs file
+attachments. iCalendar attachments sent from Workforce Ready will not be
+visible in the default <strong>Messages</strong> app on Samsung devices. To receive
+iCalendar attachments from Workforce Ready, it is recommended that you
+download <strong>Android Messages</strong> from the app store and use as your default
+Messages app.</p>
+<h3 id="data-retention-users">Data Retention Users<a class="headerlink" href="#data-retention-users" title="Permanent link">&para;</a></h3>
+<p>If you use Data Retention to purge sensitive information from your
+databases, a <strong>System Generated SMS</strong> data type will be available. If
+data is hard-deleted, it can be tracked in the execution history.</p>
+<h2 id="subscribe-responses-from-sms-text">Subscribe Responses From SMS Text<a class="headerlink" href="#subscribe-responses-from-sms-text" title="Permanent link">&para;</a></h2>
+<p>When recipients receive an SMS text, they will have the option to
+unsubscribe by responding with STOP. They will have the option to
+resubscribe by replying with START. If they resubscribe, they will
+receive a confirmation message from Twilio indicating they are
+subscribed again.</p>
+<p><a class="glightbox" href="../SMSIntegrationTwilio_24.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../SMSIntegrationTwilio_24.png" /></a></p>
+<p>When users receive an SMS text message to approve or reject a request,
+and the request is rejected and requires a comment as to why, the
+instructions in the text message will clearly instruct the user how to
+respond and allow them to enter the comment in the text message.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The Outgoing Message looks like this:<br><br>
+Please reply Y/N followed by this code 73756 to Approve/Reject this request. If N, please also provide a brief comment.<br><br>
+Reply STOP on +13173427186 to unsubscribe.<br><br>
+The Response/Reply looks like this:<br><br>
+N 76542 Employee no longer eligible at this time.</p>
+</div>
+<h3 id="two-way-sms-messages-for-scheduler">Two-Way SMS Messages for Scheduler<a class="headerlink" href="#two-way-sms-messages-for-scheduler" title="Permanent link">&para;</a></h3>
+<p>For companies with the Scheduler module enabled, some of the items that
+can be sent via SMS text messaging require additional details in
+addition to the approve/reject.</p>
+<p>These items contain additional details related to the request.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Here is an example:<br></p>
+<p>Please reply Y/N \&lt;space&gt; followed by this code 11234 to Approve/Reject this request. Please note that the reply will automatically be applicable to the first Peer to Approve Peer request. Please login to WFR to change peers/modify this request.</p>
+</div>
+<p>This applies to <strong>Schedule Open Shift</strong>, <strong>Schedule Request for
+Coverage</strong>, and <strong>Schedule Shift Swap</strong> items.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Developers">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Developers
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../020SSOSamlAndOAuth/" class="md-footer__link md-footer__link--next" aria-label="Next: SSO with SAML and OAuth">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                SSO with SAML and OAuth
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.path", "navigation.indexes", "navigation.instant", "navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+        <script src="../../assets/javascripts/home.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

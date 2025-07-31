@@ -1,0 +1,11 @@
+
+Two steps to start working each time:
+
+1. Reactivate python virtual environment: .\venv\Scripts\activate
+
+2. Serve the site: mkdocs serve
+
+
+The following is the best set of instructions: https://jameswillett.dev/getting-started-with-material-for-mkdocs/#initial-installation
+
+
