@@ -1,6 +1,6 @@
 # About me
 
-I'm a writer with many years of experience in creating content of all kinds. Currently, I write [API documentation](APIDocs/APIDocsLanding.htm), technical and non-technical content, marketing and promotional content, software and hardware content, print and online content, and more. Check out my
+QUICK EDIT I'm a writer with many years of experience in creating content of all kinds. Currently, I write [API documentation](APIDocs/APIDocsLanding.htm), technical and non-technical content, marketing and promotional content, software and hardware content, print and online content, and more. Check out my
 [LinkedIn profile](https://www.linkedin.com/in/ryan-rader-43042910/){target="\_blank"} to see full details about what I've done and where I've done it.
 
 !!! note
