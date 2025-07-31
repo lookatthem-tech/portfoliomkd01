@@ -298,7 +298,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 <div class="w3-padding-64 w3-light-grey">
   <div class="w3-row-padding">
     <div class="w3-col l4 m6">
-      <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="app5.jpg" alt="App" width="335" height="471" style="border: 0px">
+      <img class="w3-image w3-round-large w3-hide-small " src="app5.jpg" alt="App" width="335" height="471" style="border: 0px">
     </div>
     <div class="w3-col l8 m6">
       <h1 class="w3-jumbo"><b>About me</b></h1>

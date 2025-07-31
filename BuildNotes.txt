@@ -1,5 +1,6 @@
 
-Two steps to start working each time:
+Follow these two steps to each time you start working. With these steps, every time you make a file change and save, your site will be rebuilt locally
+so that you can view your changes:
 
 1. Reactivate python virtual environment: .\venv\Scripts\activate
 
@@ -8,7 +9,9 @@ Two steps to start working each time:
 
 The following is the best set of instructions: https://jameswillett.dev/getting-started-with-material-for-mkdocs/#initial-installation
 
-deploy to github pages manually by running this locally: mkdocs gh-deploy --clean
+
+Currently, this project is also synched to github. It is configured so that every time you push changes to github, your live site will
+rebuild to github pages via a github action. The ci.yml file in the .github\workflows folder enables that build process.
 
 
 
