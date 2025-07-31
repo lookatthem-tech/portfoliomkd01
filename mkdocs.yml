@@ -54,7 +54,8 @@ theme:
     - navigation.footer
     - navigation.path
     - navigation.indexes
-    - navigation.instant
+    # Turn off the following line as long as you are using pages with swagger-ui-tag, because it causes page to load halfway
+    # - navigation.instant
     - navigation.top
     # Turn on the following two lines only if you want tabs in the top nav
     # - navigation.tabs
