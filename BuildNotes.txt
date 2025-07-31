@@ -8,4 +8,7 @@ Two steps to start working each time:
 
 The following is the best set of instructions: https://jameswillett.dev/getting-started-with-material-for-mkdocs/#initial-installation
 
+deploy to github pages manually by running this locally: mkdocs gh-deploy --clean
+
+
 
