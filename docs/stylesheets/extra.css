@@ -197,5 +197,51 @@ BEGIN custom css for tables
 /* END custom css for tables */
 
 /************************************************************************* 
+BEGIN custom css for material theme that will override mkdocs.yml colors
+**************************************************************************/
+/* PRIMARY color */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #188361;
+}
+
+/* ACCENT color (for links, buttons, highlights) */
+[data-md-color-scheme="default"] {
+  --md-accent-fg-color: green;
+}
+
+/* This changes the slate colors for DARK MODE */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #6699ff;
+  --md-accent-fg-color: limegreen;
+}
+
+/* Regular link color */
+.md-typeset a {
+  color: blue;
+  text-decoration: none; /* optional: remove underline */
+}
+
+/* Dark mode link overrides */
+[data-md-color-scheme="slate"] {
+  --md-typeset-a-color: pink;
+}
+
+/* Hovered link color */
+.md-typeset a:hover {
+  color: limegreen;
+}
+
+/* Sidebar hover */
+.md-nav__link:hover {
+  color: limegreen;
+}
+
+/* Active page in sidebar */
+.md-nav__link--active {
+  color: navy;
+  font-weight: bold;
+}
+
+/************************************************************************* 
 BEGIN custom css for HOME PAGE
 **************************************************************************/

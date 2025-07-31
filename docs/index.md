@@ -274,7 +274,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 <div class="w3-padding-64 w3-white">
   <div class="w3-row-padding">
     <div class="w3-col l8 m6">
-      <h1 class="w3-jumbo"><b>Welcome!</b></h1>
+      <h1 class="w3-jumbo" style="color: orange"><b>Welcome!</b></h1>
       <h1 class="w3-xxxlarge w3-text-green"><b>This is Ryan's portfolio</b></h1>
       <p><span class="w3-xlarge">Thanks for stopping by.</span> I'm Ryan Rader. I have a broad range of skills in Technical Writing, and this is my portfolio of documentation and other samples. To see my history and CV on LinkedIn, use the button below.</p>
         
@@ -295,13 +295,13 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 </div>
 
 <!-- Clarity Section -->
-<div class="w3-padding-64 w3-light-grey">
-  <div class="w3-row-padding">
+<div class="w3-padding-64 w3-light-grey" style="background-color: yellow">
+  <div class="w3-row-padding" >
     <div class="w3-col l4 m6">
       <img class="w3-image w3-round-large w3-hide-small " src="app5.jpg" alt="App" width="335" height="471" style="border: 0px">
     </div>
     <div class="w3-col l8 m6">
-      <h1 class="w3-jumbo"><b>About me</b></h1>
+      <h1 class="w3-jumbo" style="color: orange"><b>About me</b></h1>
       
       <p><span class="w3-xlarge">I'm a writer</span> with many years of experience in creating content of all kinds. Currently, I write API documentation, technical and non-technical content, marketing and promotional content, software and hardware content, print and online content, and more. Check out my full  <a href="/AboutMe/" style="color: purple">About me</a> page for more details. </p>
     </div>

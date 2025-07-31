@@ -76,7 +76,7 @@ theme:
       toggle:
         icon: material/weather-night
         name: Light mode
-      primary: purple
+      primary: red
       accent: indigo
 
 markdown_extensions:
