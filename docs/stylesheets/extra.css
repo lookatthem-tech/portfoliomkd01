@@ -245,8 +245,19 @@ BEGIN custom css for material theme that will override mkdocs.yml colors
 /************************************************************************* 
 BEGIN custom css for HOME PAGE
 **************************************************************************/
-/* Apply fix only on the homepage */
-body[data-md-path="index.md"] .md-header__title img[src*="rr-logo"] {
-  vertical-align: middle;
-  margin-bottom: -9px;
+/* Fix logo alignment in header - home page only */
+.md-header .md-logo {
+  vertical-align: middle !important;
+  align-self: center !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
 }
+
+.md-header .md-logo img,
+.md-header .md-logo svg {
+  vertical-align: middle !important;
+  margin: auto !important;
+}
+
+/* END the fix logo alignment in header - home page only */f
