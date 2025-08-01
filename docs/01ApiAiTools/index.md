@@ -19,15 +19,14 @@ references that I created:
 ## API documentation and testing tools
 
 For testing APIs and gathering the information for documentation, I have
-used various tools. The tools I've used most often are Postman and
-Swagger (OpenAPI). For small demonstrations of what I can do in those
+used various tools. For small demonstrations of what I can do in those
 tools, see the following sections.
 
 ### MkDocs
 
 The site you are currently viewing is an example I have built with the Python-based MkDocs static site generator. I stored the site files in GitHub, and edited them in Visual Studio Code. I published the site to GitHub Pages via an Action. In addition to the API pages referenced earlier, this site includes the following API doc samples that I built with the specified UI tool integrations:
 
-- [Swagger UI Pet Store Example](../ProductCatalog/PetStoreSwgUiTag.md)
+- [Swagger UI (aka OpenAPI) Pet Store Example](../ProductCatalog/PetStoreSwgUiTag.md)
 - [Stoplight UI Pet Store Example](../ProductCatalog/PetStoreStoplight.md)
 - [Swagger UI Manage Rate Plan Example](../ProductCatalog/ManageRatePlan.md)
 - [Stoplight UI Hotel Availability Example](../ProductCatalog/HotelAvail.md)
@@ -48,14 +47,6 @@ sites:
   docs](https://documenter.getpostman.com/view/26797508/2s93RZNqWX){target="\_blank"}
 - [Formula One drivers API
   docs](https://documenter.getpostman.com/view/26797508/2s93XsXRWt){target="\_blank"}
-
-### OpenAPI
-
-I created an API documentation site on github that uses data from the
-Swagger PetStore Sample API. I built the site with OpenAPI. I'm very
-experienced with CSS, so I can style sites like this to fit any branding
-and format that a company needs. You can see this site
-[here](https://lookatthem-tech.github.io/PetStoreOpenAPI/#/){target="\_blank"}.
 
 ### Madcap Flare and Zendesk
 
