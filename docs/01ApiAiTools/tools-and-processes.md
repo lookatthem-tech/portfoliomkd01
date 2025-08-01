@@ -61,9 +61,9 @@ documentation set that I published simultaneously (content reuse in
 multiple channels) to a Madcap Flare site and a Zendesk Guide Help site.
 The following links show you two of those pages:
 
-- [Geolocations API](ApiGeolocations.md)
+- [Geolocations API](https://lookatthem-tech.github.io/portfolio001/Content/Topics/APIDocs/DpGeolocation.htm){target="\_blank"}
 
-- [Sensors API](sensors-api.md)
+- [Sensors API](https://lookatthem-tech.github.io/portfolio001/Content/Topics/APIDocs/StSensors11.3.1.htm){target="\_blank"}
 
 ### Sphinx site example
 
