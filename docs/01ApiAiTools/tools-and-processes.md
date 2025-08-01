@@ -3,17 +3,28 @@
 The sections on this page show examples of my skills in the areas of
 tools and processes.
 
-## Docs as code
+## SSGs, GitHub, etc.
 
-The following sections show some examples of what I can do with
-Docs-As-Code tools, github versioning and deployment, Docusaurus,
-Jekyll, and Sphinx.
+The following sections show some examples of what I can do with Docs-As-Code tools, static site generators (SSGs), GitHub versioning and deployment, Vercel, Docusaurus, Jekyll, and Sphinx.
 
-### Github site example
+### MkDocs
 
-To further demonstrate my capabilities to work with modern developer doc
-tools, I used github to build, edit, version, and deploy this portfolio
-site that you are currently viewing.
+The site you are currently viewing is an example I have built with the Python-based MkDocs static site generator. I stored the site files in GitHub, and edited them in Visual Studio Code. I published the site to GitHub Pages via an Action. In addition to the API pages referenced earlier, this site includes the following API doc samples that I built with the specified UI tool integrations:
+
+- [Swagger UI (aka OpenAPI) Pet Store Example](../ProductCatalog/PetStoreSwgUiTag.md)
+- [Stoplight UI Pet Store Example](../ProductCatalog/PetStoreStoplight.md)
+- [Swagger UI Manage Rate Plan Example](../ProductCatalog/ManageRatePlan.md)
+- [Stoplight UI Hotel Availability Example](../ProductCatalog/HotelAvail.md)
+
+### Next.js
+
+I have built a site with the React-based Next.js static site generator. For this site, I stored the site files in GitHub, and edited them in Visual Studio Code. I then used a GitHub Action to publish the site to Vercel. The site is an ongoing (not totally polished) project. You can see an API page and access the rest of the site here:
+
+- [Next.js doc site](https://portfolionextjs07.vercel.app/API%20and%20Tools/geolocations-api){target="\_blank"} published to Vercel
+
+### Github Pages example
+
+I used GitHub to build, edit, and version, and deploy this portfolio site that you are currently viewing. It is published to GitHub Pages.
 
 ### Docusaurus example
 
