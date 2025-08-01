@@ -248,7 +248,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
       <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" ></path></svg>&nbsp;LinkedIn</a>
       </button>
 
-      <p>Available for <i class="fa fa-android w3-xlarge w3-text-green"></i> <i class="fa fa-apple w3-xlarge"></i> <i class="fa fa-windows w3-xlarge w3-text-blue"></i></p>
     </div>
     <div class="w3-col l4 m6">
       <img src="app001.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471" style="border: 0px; border-radius: 10px">
@@ -267,7 +266,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     <div class="w3-col l8 m6">
       <h1 class="w3-jumbo" style="color: seagreen"><b>About me</b></h1>
       
-      <p><span class="w3-xlarge">I'm a writer</span> with many years of experience in creating content of all kinds. Currently, I write API documentation, technical and non-technical content, marketing and promotional content, software and hardware content, print and online content, and more. Check out my full  <a href="/AboutMe/" style="color: purple">About me</a> page for more details. </p>
+      <p><span class="w3-xlarge">I'm a writer</span> with many years of experience in creating content of all kinds. Currently, I write API documentation, technical and non-technical content, marketing and promotional content, software and hardware content, print and online content, and more. Check out my full  <a href="aboutme/" style="color: purple">About me</a> page for more details. </p>
     </div>
   </div>
 </div>
@@ -278,11 +277,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   <p>Check out these sections to find out.</p>
 
   <div class="w3-row" style="margin-top:64px">
-    <div class="w3-col s3">
-      <a href="AboutMe/" style="color: white"><i class="fa fa-bolt w3-text-orange w3-jumbo"></i>
-      <p>About me</p></a>
-    </div>
-    <div class="w3-col s3">
+     <div class="w3-col s3">
       <a href="01ApiAiTools/" style="color: white"><i class="fa fa-gear w3-text-red w3-jumbo"></i>
       <p>API, AI, Tools</p></a>
     </div>
@@ -294,13 +289,14 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
       <a href="03Developers/" style="color: white"><i class="fa fa-laptop w3-text-green w3-jumbo"></i>
       <p>Developers</p></a>
     </div>
-  </div>
-
-  <div class="w3-row" style="margin-top:64px">
     <div class="w3-col s3">
       <a href="hardware/" style="color: white"><i class="fa fa-hdd-o w3-text-cyan w3-jumbo"></i>
       <p>Hardware</p></a>
     </div>
+  </div>
+
+  <div class="w3-row" style="margin-top:64px">
+    
     <div class="w3-col s3">
       <a href="PrintTemplates/" style="color: white"><i class="fa fa-file w3-text-blue w3-jumbo"></i>
       <p>Print Templates</p></a>
@@ -313,26 +309,13 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
       <a href="BookPub/" style="color: white"><i class="fa fa-book w3-text-cyan w3-jumbo"></i>
       <p>Book Publishing</p></a>
     </div>
-  </div>
-  
-  <div class="w3-row" style="margin-top:64px">
     <div class="w3-col s3">
       <a href="design/" style="color: white"><i class="fa fa-image w3-text-pink w3-jumbo"></i>
       <p>CSS and Design</p></a>
     </div>
-    <div class="w3-col s3">
-      <i class="fa fa-shield w3-text-orange w3-jumbo"></i>
-      <p>Stabile</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-wifi w3-text-grey w3-jumbo"></i>
-      <p>Connected</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-image w3-text-pink w3-jumbo"></i>
-      <p>HD</p>
-    </div>
   </div>
+  
+  
 </div>
 
 </body>

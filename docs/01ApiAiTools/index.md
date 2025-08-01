@@ -23,6 +23,21 @@ used various tools. The tools I've used most often are Postman and
 Swagger (OpenAPI). For small demonstrations of what I can do in those
 tools, see the following sections.
 
+### MkDocs
+
+The site you are currently viewing is an example I have built with the Python-based MkDocs static site generator. I stored the site files in GitHub, and edited them in Visual Studio Code. I published the site to GitHub Pages via an Action. In addition to the API pages referenced earlier, this site includes the following API doc samples that I built with the specified UI tool integrations:
+
+- [Swagger UI Pet Store Example](../ProductCatalog/PetStoreSwgUiTag.md)
+- [Stoplight UI Pet Store Example](../ProductCatalog/PetStoreStoplight.md)
+- [Swagger UI Manage Rate Plan Example](../ProductCatalog/ManageRatePlan.md)
+- [Stoplight UI Hotel Availability Example](../ProductCatalog/HotelAvail.md)
+
+### Next.js
+
+I have built a site with the React-based Next.js static site generator. For this site, I stored the site files in GitHub, and edited them in Visual Studio Code. I then used a GitHub Action to publish the site to Vercel. The site is an ongoing (not totally polished) project. You can see an API page and access the rest of the site here:
+
+- [Next.js doc site](https://portfolionextjs07.vercel.app/API%20and%20Tools/geolocations-api){target="\_blank"} published to Vercel
+
 ### Postman
 
 To demonstrate my capabilities for building API documentation with the

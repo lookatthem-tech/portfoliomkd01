@@ -201,47 +201,63 @@ BEGIN custom css for material theme that will override mkdocs.yml colors
 **************************************************************************/
 /* PRIMARY color */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #993333;
+  --md-primary-fg-color: #6f8d6a;
 }
 
 /* ACCENT color (for links, buttons, highlights) */
 [data-md-color-scheme="default"] {
-  --md-accent-fg-color: purple;
+  --md-accent-fg-color: #0066ff;
 }
 
 /* This changes the slate colors for DARK MODE */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #6699ff;
+  --md-primary-fg-color: #6f8d6a;
   --md-accent-fg-color: limegreen;
+}
+
+.md-nav__item .md-nav__link--active {
+  color: darkgreen;
 }
 
 /* Regular link color */
 .md-typeset a {
-  color: purple;
+  color: darkgreen;
   text-decoration: none; /* optional: remove underline */
 }
 
-/* Dark mode link overrides */
-[data-md-color-scheme="slate"] {
-  --md-typeset-a-color: pink;
+[data-md-color-scheme="slate"] .md-content .md-typeset a {
+  color: #9bd770 !important;
 }
 
-/* Hovered link color */
-.md-typeset a:hover {
-  color: limegreen;
+[data-md-color-scheme="slate"] .md-content .md-typeset a:hover {
+  color: #c6ffb3 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__item .md-nav__link--active {
+  color: #9bd770 !important;
 }
 
 /* Sidebar hover */
 .md-nav__link:hover {
-  color: limegreen;
-}
-
-/* Active page in sidebar */
-.md-nav__link--active {
-  color: navy;
-  font-weight: bold;
+  color: #0066ff;
 }
 
 /************************************************************************* 
 BEGIN custom css for HOME PAGE
 **************************************************************************/
+/* Fix logo alignment in header - home page only */
+.md-header .md-logo {
+  vertical-align: middle !important;
+  align-self: center !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.md-header .md-logo img,
+.md-header .md-logo svg {
+  vertical-align: middle !important;
+  margin: auto !important;
+}
+
+/* END the fix logo alignment in header - home page only */f

@@ -3,45 +3,41 @@ site_url: https://lookatthem-tech.github.io/portfoliomkd01/
 
 nav:
   - Home: index.md
+  - About me:
+      - aboutme/index.md
   - API, AI, Tools:
       - 01ApiAiTools/index.md
       - Geolocations API: 01ApiAiTools/ApiGeolocations.md
       - Sensors API: 01ApiAiTools/sensors-api.md
+      - Pet Store Swagger UI Tag: ProductCatalog/PetStoreSwgUiTag.md
+      - Pet Store Stoplight: ProductCatalog/PetStoreStoplight.md
+      - Manage Rate Plan: ProductCatalog/ManageRatePlan.md
+      - Hotel Availability: ProductCatalog/HotelAvail.md
       - Artificial Intelligence: 01ApiAiTools/ai.md
-      - Tools and processes: 01ApiAiTools/tools-and-processes.md
+      - Tools and Processes: 01ApiAiTools/tools-and-processes.md
   - Software:
       - Software/index.md
       - COVID-19 Paycheck Protection Program Guide: Software/01CovidPppUG.md
       - People Insights Guide: Software/02PeopleInsightsUG.md
-      - Improving productivity: Software/ImprovingProductivity.md
-      - Collaborate with anyone: Software/CollaborateWithAnyone.md
+      - Improving Productivity: Software/ImprovingProductivity.md
+      - Collaborate with Anyone: Software/CollaborateWithAnyone.md
       - Unifying Applications: Software/UnifyApplications.md
       - Getting Prysm: Software/GettingPFD.md
   - Developers:
       - 03Developers/index.md
-      - SMS integration with Twilio: 03Developers/010SMSIntegrationTwilioUG.md
+      - SMS Integration with Twilio: 03Developers/010SMSIntegrationTwilioUG.md
       - SSO with SAML and OAuth: 03Developers/020SSOSamlAndOAuth.md
-      - Error logging: 03Developers/LogsInPFD.md
+      - Error Logging: 03Developers/LogsInPFD.md
   - Hardware:
       - hardware/index.md
-  - Print templates:
+  - Print Templates:
       - PrintTemplates/index.md
   - Videos:
       - Videos/index.md
-  - Book publishing:
+  - Book Publishing:
       - BookPub/index.md
-  - CSS and design:
+  - CSS and Design:
       - design/index.md
-  - Home page test:
-      - HomePgTest/index.md
-
-  - Product Catalog:
-      - ProductCatalog/index.md
-      - Hotel Availability: ProductCatalog/HotelAvail.md
-      - Pet Store Stoplight: ProductCatalog/PetStoreStoplight.md
-      - Pet Store Swagger UI Tag: ProductCatalog/PetStoreSwgUiTag.md
-      - Hotel Content: ProductCatalog/HotelContent.md
-      - Manage Rate Plan: ProductCatalog/ManageRatePlan.md
 
 theme:
   name: material
