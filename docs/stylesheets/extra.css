@@ -245,3 +245,8 @@ BEGIN custom css for material theme that will override mkdocs.yml colors
 /************************************************************************* 
 BEGIN custom css for HOME PAGE
 **************************************************************************/
+/* Apply fix only on the homepage */
+body[data-md-path="index.md"] .md-header__title img[src*="rr-logo"] {
+  vertical-align: middle;
+  margin-bottom: -9px;
+}
